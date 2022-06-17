@@ -1,0 +1,81 @@
+﻿@model CompanyViewModel
+@{
+    ViewData["Title"] = "Detail";
+}
+<partial name="_menu"/>
+<h2>Company Detail</h2>
+
+<table class="table wb-tables table" style="width:100%">
+    <thead>
+        <tr>
+            <th width="40%">
+                Company Detail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="40%">
+                Company Name
+            </td>
+            <td width="50%">
+                @Model.Name
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Company Industry
+            </td>
+            <td width="50%">
+                @Model.Industry
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Phone Number        
+            </td>
+            <td width="50%">
+                @Model.Phone
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Address 1           
+            </td>
+            <td width="50%">
+                @Model.Address1
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Address 2       
+            </td>
+            <td width="50%">
+                @Model.Address2
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Location
+            </td>
+            <td width="50%">
+                @Model.City @Model.PostalCode
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Email  Address
+            </td>
+            <td width="50%">
+                @Model.Email
+            </td>
+        </tr>
+        
+    </tbody>
+     
+
+
+
+</table>
+<a asp-controller="Company" asp-action="Index"class="btn btn-default" role="button">Back to List</a>

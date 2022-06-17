@@ -1,0 +1,36 @@
+﻿@using JobEasyWithGOC.Data.DataModel
+@{
+    ViewData["Title"] = "Create";
+}
+@model ApplicationViewModel
+<partial name="_menu" />
+<h2>Create an Application</h2>
+<div class="wb-frmvld">
+    <form asp-action="Create" method="post">
+
+        <div class="form-group">
+
+            <label asp-for="@Model.Applicant.FirstName" class="required"><span class="field-name">Applicant</span> <strong class="required">(required)</strong></label><br />
+            @Html.DropDownListFor(m=>m.Applicant.FirstName,Model.ApplicantList)
+        </div>
+        <div class="form-group">
+
+            <label asp-for="@Model.JobPost.JobTitle" class="required"><span class="field-name">Job</span> <strong class="required">(required)</strong></label><br />
+            @Html.DropDownListFor(m=>m.JobPost.JobTitle,Model.JobPostList)
+        </div>
+        <div class="form-group">
+
+            <label asp-for="@Model.Company.Name" class="required"><span class="field-name">Company</span> <strong class="required">(required)</strong></label><br />
+            @Html.DropDownListFor(m=>m.Company.Name,Model.CompanyList)
+        </div>
+
+
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary">
+            <a asp-controller="Application" asp-action="Index" class="btn btn-default" role="button">Back to List</a>
+        </div>
+
+
+    </form>
+</div>

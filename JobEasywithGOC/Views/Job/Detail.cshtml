@@ -1,0 +1,88 @@
+﻿@model JobPostViewModel
+@{
+    ViewData["Title"] = "Detail";
+}
+<partial name="_menu"/>
+<h2>Job Detail</h2>
+
+<table class="table wb-tables table" style="width:100%">
+    <thead>
+        <tr>
+            <th width="40%">
+                Job Detail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="40%">
+                Job Title
+            </td>
+            <td width="50%">
+                @Model.JobTitle
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Company Name
+            </td>
+            <td width="50%">
+                @Model.CompanyName
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Job Description
+            </td>
+            <td width="50%">
+                @Model.JobDescription
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Salary
+            </td>
+            <td width="50%">
+                @Model.Salary
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Location
+            </td>
+            <td width="50%">
+                @Model.Location
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Contact
+            </td>
+            <td width="50%">
+                @Model.Contact
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Education
+            </td>
+            <td width="50%">
+                @Model.Education
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Starting Date
+            </td>
+            <td width="50%">
+                @Model.StartingDate
+            </td>
+        </tr>
+    </tbody>
+     
+
+
+
+</table>
+<a asp-controller="Job" asp-action="Index"class="btn btn-default" role="button">Back to List</a>

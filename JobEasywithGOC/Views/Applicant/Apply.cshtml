@@ -1,0 +1,56 @@
+﻿@model ApplicantViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="_menu"/>
+<h2>Job List</h2>
+
+
+
+<table class="wb-tables table table-striped table-hover" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Job Title
+            </th>
+            <th>
+                Job Description
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ob in Model.JobPostList)
+        {if(ob.Isdeleted != 1)
+            {
+              <tr>
+                <td width="20%">
+                    @ob.JobTitle
+                </td>
+                <td width="50%">
+                    @ob.JobDescription
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Applicant" asp-action="JobDetail" asp-route-id="@ob.Id" class="btn btn-default">Detail</a>
+                    </div>
+                </td>
+                
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Applicant" asp-action="Applay" asp-route-id="@ob.Id" class="btn btn-default">Delete</a>
+                    </div>
+                </td>
+            </tr>  
+            }
+            
+
+        }
+    </tbody>
+
+
+
+
+</table>

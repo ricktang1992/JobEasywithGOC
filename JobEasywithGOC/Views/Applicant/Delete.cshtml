@@ -1,0 +1,85 @@
+﻿@using JobEasyWithGOC.Data.DataModel
+@{
+    ViewData["Title"] = "Delete";
+}
+@model ApplicantViewModel
+<partial name="_menu"/>
+<h2>Delete The Applicant</h2>
+<div class="wb-frmvld">
+<form asp-action="Delete" method="post">
+  <h1>@Model.Isdeleted</h1>
+  <div class="form-group"> 
+
+    <label asp-for="@Model.FirstName" class="required"><span class="field-name">First Name</span> <strong class="required">(required)</strong></label>
+    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @required = "required"})
+  </div>
+
+  <div class="form-group">
+
+    <label asp-for="@Model.LastName" class="required"><span class="field-name">Last Name</span> <strong class="required">(required)</strong></label>
+    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @required = "required"})
+
+  </div>
+
+  <div class="form-group">   
+      
+    <label asp-for="@Model.Phone" class="required"><span class="field-name">Phone Number</span> <strong class="required">(required)</strong></label>
+    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @type ="number", @required = "required"})
+
+  </div>
+  <div class="form-group">   
+    <label asp-for="@Model.Address1" class="required"><span class="field-name">Address Line 1</span> <strong class="required">(required)</strong></label>
+    @Html.TextBoxFor(m => m.Address1, new { @class = "form-control", @required = "required"})
+
+
+  </div>
+
+  <div class="form-group"> 
+    <label asp-for="@Model.Address2" class="required"><span class="field-name">Address Line 2</span> <strong class="required">(required)</strong></label>
+    @Html.TextBoxFor(m => m.Address2, new { @class = "form-control", @required = "required"})
+  </div>
+
+  <div class="form-group">
+  
+    <label asp-for="@Model.City" class="required"><span class="field-name">City</span> <strong class="required">(required)</strong></label>
+    @Html.TextBoxFor(m => m.City, new { @class = "form-control", @required = "required"})
+  </div>
+
+  
+  
+  <div class="form-group">
+  
+    <label asp-for="@Model.PostalCode" class="required"><span class="field-name">Postal Code</span> <strong class="required">(required)</strong></label>
+    @Html.TextBoxFor(m => m.PostalCode, new { @class = "form-control", @required = "required"})
+  </div>
+
+  
+  
+
+
+    <div class="form-group">
+
+    <label asp-for="@Model.CountryId" class="required"><span class="field-name">Country</span> <strong class="required">(required)</strong></label><br/>
+                     @Html.DropDownListFor(m=>m.CountryId,Model.Countrylist)
+  </div>
+
+  <div class="form-group">
+
+    <label asp-for="@Model.ProvinceId" class="required"><span class="field-name">Province</span> <strong class="required">(required)</strong></label><br/>
+                     @Html.DropDownListFor(m=>m.ProvinceId,Model.Provincelist)
+  </div>
+ 
+  <div class="form-group">
+
+    <label asp-for="@Model.Email" class="required"><span class="field-name">Email Address</span> <strong class="required">(required)</strong></label>
+    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @required = "required"})
+
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Submit" class="btn btn-primary">
+    <a asp-controller="Applicant" asp-action="Index"class="btn btn-default" role="button">Back to List</a>
+  </div>
+  
+
+</form>
+</div>

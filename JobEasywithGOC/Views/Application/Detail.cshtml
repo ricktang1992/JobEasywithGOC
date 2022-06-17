@@ -1,0 +1,265 @@
+﻿@model ApplicationViewModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th width="40%">
+                Application Detail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="40%">
+                Application Title
+            </td>
+            <td width="50%">
+                @Model.Applicant.FirstName
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Company Name
+            </td>
+            <td width="50%">
+                @Model.JobPost.JobTitle
+            </td>
+        </tr>
+   
+        
+    </tbody>
+     
+
+
+
+</table>
+<a asp-controller="Application" asp-action="Index"class="btn btn-default" role="button">Back to List</a>
+
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th width="40%">
+                Applicant Detail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="40%">
+                Applicant Title
+            </td>
+            <td width="50%">
+                @Model.Applicant.FirstName
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Company Name
+            </td>
+            <td width="50%">
+                @Model.Applicant.LastName
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Applicant Description
+            </td>
+            <td width="50%">
+                @Model.Applicant.Phone
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Salary
+            </td>
+            <td width="50%">
+                @Model.Applicant.Address1
+                @Model.Applicant.Address2
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Location
+            </td>
+            <td width="50%">
+                @Model.Applicant.City , @Model.Applicant.ProvinceId , @Model.Applicant.CountryId , @Model.Applicant.PostalCode 
+            </td>
+        </tr>
+       
+        <tr>
+            <td width="40%">
+                Email Addreess
+            </td>
+            <td width="50%">
+                @Model.Applicant.Email
+            </td>
+        </tr>
+        
+    </tbody>
+     
+
+
+
+</table>
+<table class="table wb-tables table" style="width:100%">
+    <thead>
+        <tr>
+            <th width="40%">
+                Company Detail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="40%">
+                Company Name
+            </td>
+            <td width="50%">
+                @Model.Company.Name
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Company Industry
+            </td>
+            <td width="50%">
+                @Model.Company.Industry
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Phone Number        
+            </td>
+            <td width="50%">
+                @Model.Company.Phone
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Address 1           
+            </td>
+            <td width="50%">
+                @Model.Company.Address1
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Address 2       
+            </td>
+            <td width="50%">
+                @Model.Company.Address2
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Location
+            </td>
+            <td width="50%">
+                @Model.Company.City @Model.Company.PostalCode
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Email  Address
+            </td>
+            <td width="50%">
+                @Model.Company.Email
+            </td>
+        </tr>
+        
+    </tbody>
+     
+
+
+
+</table>
+
+<table class="table wb-tables table" style="width:100%">
+    <thead>
+        <tr>
+            <th width="40%">
+                Job Detail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="40%">
+                Job Title
+            </td>
+            <td width="50%">
+                @Model.Company..JobTitle
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Company Name
+            </td>
+            <td width="50%">
+                @Model.Company..CompanyName
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Job Description
+            </td>
+            <td width="50%">
+                @Model.Company..JobDescription
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Salary
+            </td>
+            <td width="50%">
+                @Model.Company..Salary
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Location
+            </td>
+            <td width="50%">
+                @Model.Company..Location
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Contact
+            </td>
+            <td width="50%">
+                @Model.Company..Contact
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Education
+            </td>
+            <td width="50%">
+                @Model.Company..Education
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Starting Date
+            </td>
+            <td width="50%">
+                @Model.Company..StartingDate
+            </td>
+        </tr>
+    </tbody>
+     
+
+
+
+</table>

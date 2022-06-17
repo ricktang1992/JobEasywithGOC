@@ -1,0 +1,75 @@
+﻿@model ApplicantViewModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th width="40%">
+                Applicant Detail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="40%">
+                Applicant Title
+            </td>
+            <td width="50%">
+                @Model.FirstName
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Company Name
+            </td>
+            <td width="50%">
+                @Model.LastName
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Applicant Description
+            </td>
+            <td width="50%">
+                @Model.Phone
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Salary
+            </td>
+            <td width="50%">
+                @Model.Address1
+                @Model.Address2
+            </td>
+        </tr>
+        <tr>
+            <td width="40%">
+                Location
+            </td>
+            <td width="50%">
+                @Model.City , @Model.ProvinceId , @Model.CountryId, @Model.PostalCode 
+            </td>
+        </tr>
+       
+        <tr>
+            <td width="40%">
+                Email Addreess
+            </td>
+            <td width="50%">
+                @Model.Email
+            </td>
+        </tr>
+        
+    </tbody>
+     
+
+
+
+</table>
+<a asp-controller="Applicant" asp-action="Index"class="btn btn-default" role="button">Back to List</a>
+<a asp-controller="Applicant" asp-action="Apply" asp-route-id="@Model.Id" class="btn btn-default" role="button">Apply a Job</a>

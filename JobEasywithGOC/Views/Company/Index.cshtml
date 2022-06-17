@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CompanyViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="_menu"/>
+<h2>Company List</h2>
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6 text-end">
+            <a asp-controller="Company" asp-action="Create" class="btn btn-primary btn-lg">
+                <i class="bi bi-patch-plus"></i> &nbsp; Create New Company
+            </a>
+            <br />
+            <br />
+        </div>
+    </div>
+
+</div>
+<table class="wb-tables table table-striped table-hover" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Company Title
+            </th>
+            <th>
+                Company Description
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ob in Model)
+        {if(ob.Isdeleted != 1)
+            {
+              <tr>
+                <td width="20%">
+                    @ob.Name
+                </td>
+                <td width="50%">
+                    @ob.Industry
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Company" asp-action="Detail" asp-route-id="@ob.Id" class="btn btn-default">Detail</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Company" asp-action="Edit" asp-route-id="@ob.Id" class="btn btn-default">Edit</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Company" asp-action="Delete" asp-route-id="@ob.Id" class="btn btn-default">Delete</a>
+                    </div>
+                </td>
+            </tr>  
+            }
+            
+
+        }
+    </tbody>
+
+
+
+
+</table>

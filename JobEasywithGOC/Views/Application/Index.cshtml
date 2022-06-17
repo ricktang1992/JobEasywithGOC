@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ApplicationViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="_menu"/>
+<h2>Application List</h2>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6 text-end">
+            <a asp-controller="Application" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-patch-plus"></i> &nbsp; Create New Application
+            </a>
+        </div>
+    </div>
+
+</div>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Applicant Name
+            </th>
+            <th>
+                Job Title
+            </th>
+            <th>
+                Company Name
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ob in Model)
+        {
+            if(ob.Isdeleted != 1)
+            {
+                
+           
+            <tr>
+                <td width="23%">
+                    @ob.Applicant.FirstName @ob.Applicant.LastName
+                </td>
+                <td width="23%">
+                    @ob.JobPost.JobTitle
+                </td>
+                <td width="23%">
+                    @ob.Company.Name
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Application" asp-action="Detail" asp-route-id="@ob.Id" class="btn btn-default mx-2">Detail</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Application" asp-action="Edit" asp-route-id="@ob.Id" class="btn btn-default mx-2">Edit</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Application" asp-action="Delete" asp-route-id="@ob.Id" class="btn btn-default mx-2">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            
+             }
+
+        }
+    </tbody>
+
+
+
+
+</table>
